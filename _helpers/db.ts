@@ -10,8 +10,8 @@ export default db;
 initialize();
 
 async function initialize() {
-    const { host, port, user, password, database } = config.database;
-    const connection = await mysql.createConnection({ host, port, user, password });
+    const { host, user, password, database } = config.database;
+    const connection = await mysql.createConnection({ host, user, password });
 
     // Create DB if it doesn't exist
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
